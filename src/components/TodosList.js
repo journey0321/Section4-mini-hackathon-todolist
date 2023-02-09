@@ -1,4 +1,6 @@
 import React from "react";
+import Edit from "../img/edit_ic.svg"
+import Delete from "../img/delete_ic.svg"
 
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
     const handleComplete = (todo) => {
@@ -41,16 +43,16 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
                     />
                     <div>
                         <button 
-                            className="button-edit tast-button"
+                            className="button-edit"
                             onClick={() => handleEdit(todo)}
                         >
-                            <i className="fa fa-edit"></i>
+                            <img src={Edit} alt="수정 아이콘" />
                         </button>
                         <button 
-                            className="button-delete tast-button" 
+                            className="button-delete" 
                             onClick={() => handleDelete(todo)}
                         >
-                            <i className="fa fa-trash"></i>
+                            <img src={Delete} alt="삭제 아이콘" />
                         </button>
                     </div>
                 </li>

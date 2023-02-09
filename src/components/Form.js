@@ -22,6 +22,12 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         setInput(event.target.value);
     };
 
+    const handleOnKeyPress = e => {
+        if(e.key === 'Enter') {
+            onInputChange();
+        }
+    }
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         if(!editTodo){
@@ -44,6 +50,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
                 value={input}
                 required
                 onChange={onInputChange}
+                onKeyPress={handleOnKeyPress}
             />
             <button 
                 className="button-add"
